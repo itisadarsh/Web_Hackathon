@@ -40,8 +40,8 @@ exports.createProduct=async(req,res)=>{
        
         
         const imageUpload=await uploadToCloudinary(thumbnail,process.env.FOLDER_NAME);
-        const saveProduct=await Product.create({prodName,prodSpecification,seller:seller._id,
-            whatYouWillLearn,categories:category,
+        const saveProduct=await Product.create({name:prodName,specification:prodSpecification,seller:seller._id,oldYear,price
+            ,categories:category,
             thumbnail:imageUpload.secure_url});
             
             await User.findByIdAndUpdate({_id:seller._id},{$push:{ product:saveProduct._id}},{new:true});
@@ -98,7 +98,7 @@ exports.getProductDetails=async(req,res)=>{
         }
 
         const prodAvail=await Product.findOne({_id:prodId}).populate({path:"seller",populate:{path:"additionalDetails"}})
-                    .populate("category")
+                    .populate("categories")
                     .exec();
 
         console.log("crs ** " ,prodAvail)
