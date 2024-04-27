@@ -1,7 +1,7 @@
 
 
 const express=require("express");
-const profileRouter=express.Router();
+const additionalDetailsRouter=express.Router();
 
 const{auth}=require("../Middleware/auth");
 
@@ -16,9 +16,10 @@ const {resetPassword}=require("../Controller/ResetPassword");
 
 profileRouter.post("/updateprofile",auth,updateProfile);
 profileRouter.post("/updateprofilepic",auth,updateProfilePic);
+profileRouter.post("/updateewspic",auth,updateEWSPic);
 profileRouter.delete("/deleteprofile",auth,deleteProfile);
 
 profileRouter.post("/resettoken",resetToken);
 profileRouter.post("/resetpassword",auth,resetPassword);
 
-module.exports=profileRouter;
+module.exports=additionalDetailsRouter;

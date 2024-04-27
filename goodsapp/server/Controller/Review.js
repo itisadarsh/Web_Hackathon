@@ -1,6 +1,6 @@
 const Mongoose  = require("mongoose");
 
-const Reviews = require("../model/Reviews");
+const Reviews = require("../model/Review");
 
 exports.createRatings=async(req,res)=>{
     try{

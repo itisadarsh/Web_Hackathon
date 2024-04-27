@@ -7,18 +7,21 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     specification: {
-        type: String
+        type: String,
+        required:true,
     },
     oldYear: {
-        type: Number
+        type: Number,
+        required:true,
     },
     categories: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Categories'
     },
-    user: {
+    seller: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required:true,
     },
     thumbnail: {
         type: String

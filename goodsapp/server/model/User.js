@@ -30,7 +30,15 @@ const userScheama=new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'AdditionalDetails',
     },
+    product:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Product',
+    }],
     image:{
+        type:String,
+        required:true,
+    },
+    ewsImage:{
         type:String,
         required:true,
     },

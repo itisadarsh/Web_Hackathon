@@ -63,6 +63,43 @@ exports.updateProfilePic=async(req,res)=>{
         
     }
 }
+
+
+exports.updateEWSPic=async(req,res)=>{
+
+    try {
+   
+        const ewsUpload=req.files.ewsUpload;
+        console.log(picUpload);
+        if(!picUpload ){
+            return res.status(400).json({
+                success:false,
+                message:"Please fill the mandatory fields"
+            })
+        }
+
+        const userId=req.user.id;
+        const user=await User.findById(userId);
+    
+
+        const  ewsUploadPic=await uploadToCloudinary( ewsUpload,process.env.FOLDER_NAME);
+
+       
+        const updatedProfile=await User.findByIdAndUpdate({_id:userId},{ewsImage:ewsUploadPic.secure_url},{new:true});
+         console.log("h")
+        return res.status(200).json({
+            success:true,
+            message:"Successfully updated Profile",
+            updatedProfile
+        });
+
+        
+    } catch (error) {
+        
+    }
+}
+
+
 exports.deleteProfile=async(req,res)=>{
     try {
         
