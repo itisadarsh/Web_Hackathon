@@ -4,7 +4,7 @@ const app=express();
 
 const productRouter=require("./Routes/Product");
 // const paymentRouter=require("./Routes/Payment");
-const profileRouter=require("./Routes/AdditionalDetails");
+const additionalDetailsRouter=require("./Routes/AdditionalDetails");
 const userRouter=require("./Routes/User");
 const cors=require("cors");
 const fileUpload=require("express-fileupload")

@@ -17,16 +17,16 @@ const {categoryPageDetails}=require("../Controller/Categories");
 const{auth,isAdmin,isBuyer,isSeller}=require("../Middleware/auth");
 
 
-courseRouter.post("/createproduct",auth,isSeller,createProduct);
-courseRouter.get("/getallproducts",auth,isSeller,getAllProducts);
-courseRouter.post("/getproductdetails",auth,isSeller,getProductDetails);
+productRouter.post("/createproduct",auth,isSeller,createProduct);
+productRouter.get("/getallproducts",auth,isSeller,getAllProducts);
+productRouter.post("/getproductdetails",auth,isSeller,getProductDetails);
 
-courseRouter.post("/createcategory",auth,isAdmin,createcategory);
-courseRouter.get("/showallcategories",showAllcategories);
-courseRouter.post("/categorypagedetails",categoryPageDetails);
+productRouter.post("/createcategory",auth,isAdmin,createcategory);
+productRouter.get("/showallcategories",showAllcategories);
+productRouter.post("/categorypagedetails",categoryPageDetails);
 
-courseRouter.post("/createratings",auth,isBuyer,createRatings);
-courseRouter.get("/getallratings",getAllRatings);
+productRouter.post("/createratings",auth,isBuyer,createRatings);
+productRouter.get("/getallratings",getAllRatings);
 
 
 module.exports=productRouter;
