@@ -8,6 +8,18 @@ module.exports = {
       mono: ["Roboto Mono", "monospace"],
     },
     colors: {
+      kindgrey:"#6E6E6E",
+      kindgreen:{
+        
+       100: "#BCFD4C",
+        200:"#A7BC5B",
+       300:"#8DA242",
+     
+      },
+
+      orange:{
+        100:"#ED8517",
+      },
       white: "#fff",
       black: "#000",
       transparent: "#ffffff00",
@@ -83,6 +95,7 @@ module.exports = {
       },
       pink: {
         5: "#FFF1F1",
+        10:" #fbe3e8",
         25: "#FBC7D1",
         50: "#F79CB0",
         100: "#F37290",

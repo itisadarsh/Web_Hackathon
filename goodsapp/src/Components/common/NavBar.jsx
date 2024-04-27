@@ -4,25 +4,26 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <div className='flex w-full  bg-richblack-900 text-richblack-5'>
+    <div className='flex w-full  bg-richblack-800 '>
 
 
-    <nav className='flex auto-mx w-11/12 justify-between'>
+    <nav className='flex mx-auto w-11/12 justify-evenly items-center '>
 
-        <img src={logo} alt=""  className='h-full '/>
+        <img src={logo} alt=""  className='h-14'/>
 
-        <div className='flex text-richblack-5'>
-        <div>Home</div>
-        <div>Products</div>
-        <div>About</div>
-
-        <div className='flex justify-between'>
-
-            <NavLink>Login</NavLink>
-            <NavLink>SignUp</NavLink>
+        <div className='flex gap-3 text-xl'>
+       <NavLink to={"/"}> <div>Home</div></NavLink>
+       <NavLink to={"/products"}> <div>Products</div></NavLink>
+       <NavLink to={"/about"}> <div>About</div></NavLink>
         </div>
 
+        <div className='flex justify-between gap-2 text-xl'>
+
+            <NavLink to={"/login"}> <div className='bg-richblack-700 p-1 rounded-lg px-2'>Login</div></NavLink>
+            <NavLink to={"/signup"}><div className='bg-richblack-700 p-1 rounded-lg px-2'>SignUp</div></NavLink>
         </div>
+
+       
 
     </nav>
 
