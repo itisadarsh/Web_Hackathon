@@ -21,7 +21,7 @@ productRouter.post("/createproduct",auth,isSeller,createProduct);
 productRouter.get("/getallproducts",auth,isSeller,getAllProducts);
 productRouter.post("/getproductdetails",auth,isSeller,getProductDetails);
 
-productRouter.post("/createcategory",auth,isAdmin,createcategory);
+productRouter.post("/createcategory",auth,createcategory);
 productRouter.get("/showallcategories",showAllcategories);
 productRouter.post("/categorypagedetails",categoryPageDetails);
 

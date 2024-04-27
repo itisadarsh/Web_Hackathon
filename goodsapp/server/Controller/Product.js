@@ -6,6 +6,7 @@ const { uploadToCloudinary } = require("../utils/Imageupload");
 exports.createProduct=async(req,res)=>{
 
     try{
+        console.log("hi")
         const{prodName,prodSpecification,oldYear,price,category}=req.body;
 
         const thumbnail=req.files.thumbnailImage;
@@ -56,8 +57,8 @@ exports.createProduct=async(req,res)=>{
     }catch(err){
         console.error(err);
         return res.status(500).json({
-            success:true,
-            message:'Something went wrong while creating course'
+            success:false,
+            message:'Something went wrong while creating product'
          
         });
     }

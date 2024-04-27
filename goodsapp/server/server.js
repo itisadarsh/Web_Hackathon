@@ -25,7 +25,7 @@ const PORT=process.env.PORT || 5000;
 dbConnect();
 cloudinaryConnect();
 
-app.use("/api/v1/course",productRouter);
+app.use("/api/v1/product",productRouter);
 // app.use("/api/v1/payment",paymentRouter);
 app.use("/api/v1/profile",additionalDetailsRouter);
 app.use("/api/v1/user",userRouter);
