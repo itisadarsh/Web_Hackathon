@@ -15,6 +15,14 @@ const additionalDetailsSchema = new mongoose.Schema({
     },
     ewsCertificate: {
         type: String
+    },
+    contact:{
+        type:String,
+        trim:true,
+    },
+    dob:{
+        type:String,
+        trim:true,
     }
 });
 
