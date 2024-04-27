@@ -3,7 +3,7 @@ const OTP=require("../model/OTP");
 const otpgenerator=require("otp-generator");
 
 const bycrypt=require("bcrypt");
-const Profile=require("../model/AdditionalDetails");
+const AdditionalDetails=require("../model/AdditionalDetails");
 const jwt=require("jsonwebtoken");
 const mailSender = require("../utils/mailSender");
 
@@ -111,10 +111,10 @@ exports.signUp=async(req,res)=>{
             });
         }
 
-        const profile=await Profile.create({
+        const profile=await AdditionalDetails.create({
             gender:null,
             dob:null,
-            about:null,
+            aadharNo:null,
             contact:null,
 
         })

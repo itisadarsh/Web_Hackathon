@@ -40,7 +40,7 @@ const userScheama=new mongoose.Schema({
     },
     ewsImage:{
         type:String,
-        required:true,
+        // required:true,
     },
     token:{
         type:String

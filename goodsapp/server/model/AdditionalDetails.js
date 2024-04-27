@@ -4,18 +4,18 @@ const mongoose = require('mongoose');
 const additionalDetailsSchema = new mongoose.Schema({
     gender: {
         type: String,
-        required: true
+    
     },
     profilePhoto: {
         type: String
     },
     aadharNo: {
         type: String,
-        required: true
+        
     },
-    ewsCertificate: {
-        type: String
-    },
+    // ewsCertificate: {
+    //     type: String
+    // },
     contact:{
         type:String,
         trim:true,
@@ -29,3 +29,4 @@ const additionalDetailsSchema = new mongoose.Schema({
 
 const AdditionalDetails = mongoose.model('AdditionalDetails', additionalDetailsSchema);
 
+module.exports = AdditionalDetails;
