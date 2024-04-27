@@ -1,7 +1,12 @@
 const mongoose=require('mongoose');
 
 const userScheama=new mongoose.Schema({
-    name:{
+    fname:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    lname:{
         type:String,
         required:true,
         trim:true,
@@ -24,10 +29,6 @@ const userScheama=new mongoose.Schema({
     additionalDetails:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'AdditionalDetails',
-    },
-    reviews:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Reviews'
     },
     image:{
         type:String,

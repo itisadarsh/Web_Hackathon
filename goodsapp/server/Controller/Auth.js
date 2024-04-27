@@ -1,11 +1,11 @@
 const User=require("../model/User");
-const OTP=require("../Model/Otp");
+const OTP=require("../model/OTP");
 const otpgenerator=require("otp-generator");
 
 const bycrypt=require("bcrypt");
 const Profile=require("../Model/Profile");
 const jwt=require("jsonwebtoken");
-const mailSender = require("../utils/MailSender");
+const mailSender = require("../utils/mailSender");
 
 require("dotenv").config();
 
