@@ -18,7 +18,7 @@ const{auth,isAdmin,isBuyer,isSeller}=require("../Middleware/auth");
 
 
 productRouter.post("/createproduct",auth,isSeller,createProduct);
-productRouter.get("/getallproducts",auth,isSeller,getAllProducts);
+productRouter.get("/getallproducts",getAllProducts);
 productRouter.post("/getproductdetails",auth,isSeller,getProductDetails);
 
 productRouter.post("/createcategory",auth,createcategory);
