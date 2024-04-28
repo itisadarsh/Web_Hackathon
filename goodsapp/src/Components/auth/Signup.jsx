@@ -4,7 +4,7 @@ import { setSignupData } from "../../slices/authSlice"
 import { ACCOUNT_TYPE } from "../../utils/constants"
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import {toast} from 'react-hot-toast';
 
 const Signup = () => {
 
@@ -16,20 +16,36 @@ const Signup = () => {
 
     const dispatch=useDispatch();
  
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+//   const [fname, setFname] = useState('');
+//   const [lname, setLname] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [confirmpassword, setConfirmPassword] = useState('');
+
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+    confirmpassword: "",
+  })
+
+  const { fname, lname, email, password, confirmpassword } = formData
+
+  function handleOnChange(e) {
+    setFormData( (prevData) =>({ ...prevData , [e.target.name] : e.target.value })                        
+)}
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Add your signup logic here
-    if(password !== confirmPassword) {toast.error("Passwords do not match");  return ; }
-    const signupData={accountType,fname,lname,email,password,confirmPassword};
-    dispatch(setSignupData(signupData))
-    dispatch(sendOtp(email, navigate))    
-
+   
+    if(password !== confirmpassword) {toast.error("Passwords do not match");  return ; }
+    const signupData={...formData , accountType};
+    console.log(signupData)
+    dispatch(setSignupData(signupData))        
+    dispatch(sendOtp(formData.email, navigate))   
+    setFormData({fname: "", lname: "",  email: "",  password: "",  confirmPassword: "",})           // Reset
+    setAccountType(ACCOUNT_TYPE.BUYER)
 
    
   };
@@ -41,7 +57,7 @@ const Signup = () => {
         <div className="flex justify-between mb-4">
           <button
             className={`px-4 py-2 rounded-full ${
-                accountType === 'buyer' ? 'bg-blue-500 text-white' : 'text-gray-500'
+                accountType === 'Buyer' ? 'bg-blue-500 text-white' : 'text-gray-500'
             }`}
             onClick={() => setAccountType('Buyer')}
           >
@@ -49,7 +65,7 @@ const Signup = () => {
           </button>
           <button
             className={`px-4 py-2 rounded-full ${
-                accountType === 'seller' ? 'bg-blue-500 text-white' : 'text-gray-500'
+                accountType === 'Seller' ? 'bg-blue-500 text-white' : 'text-gray-500'
             }`}
             onClick={() => setAccountType('Seller')}
           >
@@ -62,8 +78,9 @@ const Signup = () => {
             <input
               type="text"
               id="fname"
+              name='fname'
               value={fname}
-              onChange={(e) => setFname(e.target.value)}
+              onChange={handleOnChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
               required
             />
@@ -73,8 +90,9 @@ const Signup = () => {
             <input
               type="text"
               id="lname"
+              name="lname"
               value={lname}
-              onChange={(e) => setLname(e.target.value)}
+              onChange={handleOnChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
               required
             />
@@ -84,8 +102,9 @@ const Signup = () => {
             <input
               type="email"
               id="email"
+              name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleOnChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
               required
             />
@@ -95,19 +114,21 @@ const Signup = () => {
             <input
               type="password"
               id="password"
+              name="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handleOnChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
+            <label htmlFor="confirmpassword" className="block text-gray-700">Confirm Password</label>
             <input
               type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              id="confirmpassword"
+              name="confirmpassword"
+              value={confirmpassword}
+              onChange={handleOnChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
               required
             />

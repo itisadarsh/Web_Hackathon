@@ -28,6 +28,7 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email")
     }
      catch (error) {
+        console.log(error)
       console.log("SENDOTP API ERROR............", error)
       toast.error("Could Not Send OTP")
     }
@@ -37,12 +38,13 @@ export function sendOtp(email, navigate) {
 }
 
 
-export function signUp(accountType, firstName, lastName, email, password, confirmPassword,  otp, navigate) {
+export function signUp(accountType,  fname, lname, email, password, confirmpassword,  otp, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
+    console.log("gotta ")
     try {
-      const response = await apiConnector("POST", SIGNUP_API, {accountType, firstName,  lastName,  email,  password,  confirmPassword,  otp, })
+      const response = await apiConnector("POST", SIGNUP_API, {accountType,  fname, lname, email, password, confirmpassword,  otp, })
       console.log("SIGNUP API RESPONSE............", response)
 
       if(!response.data.success) {
@@ -80,7 +82,8 @@ export function login(email, password, navigate) {
       
       localStorage.setItem("token", JSON.stringify(response.data.token))
       localStorage.setItem("user", JSON.stringify(response.data.user))
-      navigate("/dashboard/my-profile")
+    //   navigate("/dashboard/my-profile")
+      navigate("/Product-section")
     }
      catch (error) {
       console.log("LOGIN API ERROR............", error)

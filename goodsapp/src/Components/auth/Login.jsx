@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
+import { login } from "../../services/operations/authAPI"
+
+import { useDispatch } from "react-redux"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+  
+    dispatch(login(email, password, navigate))
   };
 
   return (
