@@ -14,20 +14,20 @@ export const userendpoints={
 
 export const profileEndpoints = {
     GET_USER_DETAILS_API: BASE_URL + "/profile/getUserDetails",
-    GET_USER_ENROLLED_COURSES_API: BASE_URL + "/profile/getEnrolledCourses",
-    GET_INSTRUCTOR_DATA_API: BASE_URL + "/profile/instructorDashboard",
+    // GET_USER_ENROLLED_COURSES_API: BASE_URL + "/profile/getEnrolledCourses",
+    // GET_INSTRUCTOR_DATA_API: BASE_URL + "/profile/instructorDashboard",
   }
 
 
   export const productEndpoints = {
-    GET_ALL_COURSE_API: BASE_URL + "/product/getallproducts",
-    COURSE_DETAILS_API: BASE_URL + "/prduct/getproductDetails",
+    GET_ALL_PRODUCTS_API: BASE_URL + "/product/getallproducts",
+    PRODUCTS_DETAILS_API: BASE_URL + "/prduct/getproductDetails",
 
-    COURSE_CATEGORIES_API: BASE_URL + "/product/showAllCategories",
-    CREATE_COURSE_API: BASE_URL + "/product/createproduct",
+    PRODUCT_CATEGORIES_API: BASE_URL + "/product/showAllCategories",
+    CREATE_PRODUCT_API: BASE_URL + "/product/createproduct",
    
   
-    DELETE_COURSE_API: BASE_URL + "/product/deleteproduct",
+    DELETE_PRODUCT_API: BASE_URL + "/product/deleteproduct",
     // GET_FULL_COURSE_DETAILS_AUTHENTICATED:
     //   BASE_URL + "/course/getFullCourseDetails",
     CREATE_RATING_API: BASE_URL + "/product/createRating",

@@ -20,6 +20,11 @@ import Contact from "./Pages/Contact"
 
 
 import ForgotPassword from "./Pages/ForgotPassword"
+import AddProduct from './Components/core/AddProduct';
+import EditProduct from './Components/core/EditProduct';
+import Cart from './Components/core/Cart';
+import Products from './Components/core/Products';
+import { ACCOUNT_TYPE } from './utils/constants';
 
 // import { getUserDetails } from "./services/operations/profileAPI"
 function App() {
@@ -48,7 +53,7 @@ function App() {
     
     <Route path="/" element={<Home />}></Route>
    
-    <Route path="/product-section" element={<ProductSection/>}></Route>
+    {/* <Route path="/product-section" element={<ProductSection/>}></Route> */}
     <Route path="/verify-email" element={<VerifyEmail/>}></Route>
     
     <Route path="signup" element = { <OpenRoute> <Signup /> </OpenRoute> } />
@@ -58,11 +63,26 @@ function App() {
           <Route path="update-password/:id" element = { <OpenRoute> <UpdatePassword /> </OpenRoute> } />
           <Route path="about" element = { <OpenRoute> <About /> </OpenRoute> } />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/product-section" element={<ProductSection/>}/>
 
-
-
-
-
+          <Route element = {<PrivateRoute> <ProductSection /> </PrivateRoute>} >
+          { user?.accountType === ACCOUNT_TYPE.BUYER && (          
+                                    <>
+                                        <Route path="product-section/products" element={<Products/>} />
+                                        <Route path="product-section/cart" element={<Cart />} />
+                                    </>
+                                )           
+                  }
+                  { user?.accountType === ACCOUNT_TYPE.SELLER && (
+                                        <>
+                                           
+                                            <Route path="product-section/products-add" element={<AddProduct />} />
+                                            <Route path="product-section/edit-product/:courseId" element={<EditProduct />} />
+                                            {/* <Route path="dashboard/my-products" element={<MyProducts />} />     */}
+                                        </>
+                                  )
+                    }
+                    </Route>
     <Route path="*" element={<Error />} />
      </Routes>
 
