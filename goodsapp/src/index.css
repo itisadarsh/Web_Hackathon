@@ -18,6 +18,105 @@ code {
 @tailwind utilities;
 
 
-.img1{
+.seller-container {
+ 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.seller-form {
+  background-color: #fff; /* White form background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.form-heading {
+  color: #FC4100; /* Primary accent for heading */
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #00215E; /* Deep blue text */
+  font-size: 16px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FC4100; /* Primary accent for button */
+  color: #fff; /* White button text */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e03977; /* Darker shade of primary accent on hover */
+}
+
+
+.footer-container {
+  background-color: rgba(0, 0, 50, 0.8); /* Dark blue background color */
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.social-media {
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  color: white;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.footer-links a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 20px;
 }

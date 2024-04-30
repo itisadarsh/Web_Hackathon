@@ -7,7 +7,7 @@ exports.createProduct=async(req,res)=>{
 
     try{
         console.log("hi")
-        const{prodName,prodSpecification,oldYear,price,category}=req.body;
+        const{prodName,prodSpecification,oldYear,price,category,userId}=req.body;
 
         const thumbnail=req.files.thumbnailImage;
         if(!prodName || !prodSpecification || !oldYear || !price || !category || !thumbnail ){
@@ -18,7 +18,7 @@ exports.createProduct=async(req,res)=>{
             });
         }
     
-        const userId=req.user.id;
+        // const userId=req.user.id;
         const seller=await User.findOne({userId});
         
         if(!seller){
@@ -67,7 +67,7 @@ exports.createProduct=async(req,res)=>{
 
 exports.getAllProducts=async(req,res)=>{
     try{
-        const product=await Product.find({},{prodName:true,price:true,seller:true,thumbnail:true,prodSpecification:true,oldYear:true}
+        const product=await Product.find({},{name:true,price:true,seller:true,thumbnail:true,specification:true,oldYear:true}
                                     ).populate("seller").exec();
 
          return res.status(200).json({

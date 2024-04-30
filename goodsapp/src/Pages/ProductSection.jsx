@@ -4,6 +4,7 @@ import {productEndpoints} from "../services/apis"
 import Products from '../Components/core/Products';
 import { useSelector } from 'react-redux';
 import { ACCOUNT_TYPE } from '../utils/constants';
+import AddProduct from '../Components/core/AddProduct';
 
 const {GET_ALL_PRODUCTS_API}=productEndpoints;
 
@@ -32,8 +33,9 @@ const ProductSection = () => {
     },[])
   return (
     <div>
-
-      {user?.accountType === ACCOUNT_TYPE.BUYER  && <Products/>}  
+    {console.log(user?.accountType)}
+      {user?.accountType === ACCOUNT_TYPE.BUYER  && <Products product={products} />}  
+      {user?.accountType === ACCOUNT_TYPE.SELLER  && <AddProduct/>}  
 
 
 

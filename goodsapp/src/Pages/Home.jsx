@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import img1 from "../assests/homepage_img1.jpg";
 import Banner from "../assests/main.mp4"
+import Footer from '../Components/common/Footer';
+import CodeBlocks from './CodeBlocks';
 
 
 const Home = () => {
@@ -51,8 +53,27 @@ const Home = () => {
 
 
 </div>
+  <CodeBlocks
+            position={"lg:flex-row flex-col"}
+           heading={ <div className='text-4xl font-semibold'>Join the Rural Revolution</div>}
+            subheading={"Trust is the Unique Selling Point for Us. Leading from the front for helping the needy"}
+            ctabtn1={{btnText:"Try it yourself",
+                    Linkto:"/signup",
+                    active:true,}}
+            ctabtn2={{btnText:"Learn more",
+                    Linkto:"/login",
+                    active:false,}}
+            codeblock={`Welcome to Rural Tech Aid
+            innovation for the needy
+            always there for help
+            We got your back
 
-
+            
+            `}
+            codeColor={"text-richblack-700 font-2xl"}
+            backgroundGradient={"bg-[radial-gradient(169.40% 89.55% at 94.76% 6.29%, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%)] "}
+        />
+ <div className='bg-richblack-900 w-screen'>  <Footer/></div> 
 
     </div>
 

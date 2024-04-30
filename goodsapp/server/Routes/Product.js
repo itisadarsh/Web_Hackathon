@@ -17,7 +17,8 @@ const {categoryPageDetails}=require("../Controller/Categories");
 const{auth,isAdmin,isBuyer,isSeller}=require("../Middleware/auth");
 
 
-productRouter.post("/createproduct",auth,isSeller,createProduct);
+// productRouter.post("/createproduct",auth,isSeller,createProduct);
+productRouter.post("/createproduct",createProduct);
 productRouter.get("/getallproducts",getAllProducts);
 productRouter.post("/getproductdetails",auth,isSeller,getProductDetails);
 

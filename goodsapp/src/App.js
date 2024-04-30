@@ -55,6 +55,7 @@ function App() {
    
     {/* <Route path="/product-section" element={<ProductSection/>}></Route> */}
     <Route path="/verify-email" element={<VerifyEmail/>}></Route>
+    <Route path="/cart" element={<Cart />} />
     
     <Route path="signup" element = { <OpenRoute> <Signup /> </OpenRoute> } />
           <Route path="login" element = { <OpenRoute> <Login /> </OpenRoute> } />
@@ -69,7 +70,7 @@ function App() {
           { user?.accountType === ACCOUNT_TYPE.BUYER && (          
                                     <>
                                         <Route path="product-section/products" element={<Products/>} />
-                                        <Route path="product-section/cart" element={<Cart />} />
+                                        {/* <Route path="/cart" element={<Cart />} /> */}
                                     </>
                                 )           
                   }

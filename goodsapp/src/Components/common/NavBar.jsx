@@ -15,6 +15,8 @@ const NavBar = () => {
        <NavLink to={"/"}> <div>Home</div></NavLink>
        <NavLink to={"/products"}> <div>Products</div></NavLink>
        <NavLink to={"/about"}> <div>About</div></NavLink>
+       <NavLink to={"/contact"}> <div>Contact</div></NavLink>
+
         </div>
 
         <div className='flex justify-between gap-2 text-xl'>
