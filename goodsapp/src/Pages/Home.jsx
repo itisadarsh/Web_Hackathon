@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import img1 from "../assests/homepage_img1.jpg";
 import Banner from "../assests/main.mp4"
-import Footer from '../Components/common/Footer';
+import Footer from '../Components/core/Footer';
 import CodeBlocks from './CodeBlocks';
 
 

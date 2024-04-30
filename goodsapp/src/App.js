@@ -1,6 +1,6 @@
 
 
-import NavBar from './Components/common/NavBar';
+import NavBar from './Components/core/NavBar';
 import Login from './Components/auth/Login';
 import Signup from './Components/auth/Signup';
 import Home from './Pages/Home';
