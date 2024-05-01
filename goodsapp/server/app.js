@@ -6,7 +6,7 @@ const _dirname=path.dirname("")
 const buildPath=path.join(_dirname,"../build")
 
 app.use(express.static(buildPath))
-
+require("dotenv").config()
 
 app.get("/*",function(req,res){
     res.sendFile(path.join(__dirname,"../build/index.html"),
