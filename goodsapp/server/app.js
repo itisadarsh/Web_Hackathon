@@ -24,8 +24,8 @@ const userRouter=require("./Routes/User");
 const cors=require("cors");
 const fileUpload=require("express-fileupload")
 
-const {cloudinaryConnect}=require("./Config/cloudinaryConnect");
-const dbConnect = require("./Config/database");
+const {cloudinaryConnect}=require("./config/cloudinaryConnect");
+const dbConnect = require("./config/database");
 
 app.use(express.json());
 app.use(cookie());
